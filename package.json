@@ -1,0 +1,15 @@
+{
+  "name": "copaco-azure-test-function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "devDependencies": {
+    "serverless-azure-functions": "2.2.1",
+    "azure-functions-core-tools": "4.0.5198",
+    "serverless-offline": "^12.0.4"
+  }
+}

@@ -1,0 +1,36 @@
+service: copaco-azure-test-function
+
+frameworkVersion: '3'
+
+provider:
+  name: azure
+  region: West Europe
+  runtime: python3.8
+
+plugins:
+  - serverless-azure-functions
+  - serverless-offline
+
+package:
+  patterns:
+    - '!env/**'
+    - '!.env/**'
+    - '!local.settings.json'
+    - '!.vscode/**'
+    - '!__pycache__/**'
+    - '!node_modules/**'
+    - '!.python_packages/**'
+    - '!.funcignore'
+    - '!package.json'
+    - '!package-lock.json'
+    - '!.gitignore'
+    - '!.git/**'
+
+functions:
+  hello:
+    handler: src/handlers/hello.main
+    events:
+      - http:
+          path: /hello
+          method: POST
+          authLevel: function
