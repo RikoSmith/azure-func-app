@@ -27,10 +27,18 @@ package:
     - '!.git/**'
 
 functions:
-  hello:
-    handler: src/handlers/hello.main
+  random:
+    handler: src/handlers/random.main
     events:
       - http:
-          path: /hello
-          method: POST
+          path: /random
+          method: GET
+          authLevel: function
+
+  search:
+    handler: src/handlers/search.main
+    events:
+      - http:
+          path: /search
+          method: GET
           authLevel: function
